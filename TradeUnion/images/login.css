@@ -1,0 +1,23 @@
+﻿.textbox
+{
+	border:1px solid #A7CAE8;
+	margin-left:2px;
+}
+
+.style1 {
+    height: 24px;
+}
+
+.auto-style1 {
+    width: 284px;
+}
+
+.auto-style2 {
+    height: 100px;
+    width: 666px;
+}
+
+.auto-style3 {
+    height: 1080px;
+    width: 666px;
+}

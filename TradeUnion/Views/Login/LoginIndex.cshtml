@@ -1,0 +1,116 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/images/login.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>工会日常工作管理系统</title>
+</head>
+<body style="background-color:#098ed0;font-size:14px;color:#098ED0;margin:0;">
+   
+
+    <form action="/Login/LoginAction" method="post">
+        <table style="WIDTH:100%; HEIGHT:100%;margin-top:6em;">
+            <tr>
+                <td></td>
+                <td style="height:100px"><br /><br /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td valign="top" style="background-image:url(/images/loginbg.gif); background-repeat:no-repeat; width: 432px; height: 283px;">
+                    <table style="WIDTH: 60%; margin-top:70px; margin-left:160px;">
+                        <tr>
+                            <td style="height:24px" align="center">帐&nbsp;&nbsp;&nbsp;号:</td>
+                            <td> 
+
+                                <input name="UserName" type="text" width="160px;" required />
+                         
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" class="style1">密&nbsp;&nbsp;&nbsp;码:</td>
+                            <td><input name="PassWord" type="password" width="160px;" required /></td>
+                          
+                        </tr>
+                       
+                        <tr>
+                            <td></td>
+                            <td style="padding-top:10px;">
+                                &nbsp; &nbsp;
+                                <button type="submit" class="btn btn-info">登录</button>
+                                <button type="reset" style="margin-left:30px;" class="btn btn-default">重置</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+                <td></td>
+            </tr>
+
+        </table>
+
+
+
+    </form>
+    
+    
+
+    @*<script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>*@
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @*<table>
+        <tr style="height:200px;"><td></td></tr>
+    </table>
+    <table width="100%">
+         <form action="/Login/LoginAction" method="post">
+                    <table align="center" width="100%">
+                        <tr>
+                            <td width="33%"></td>
+                            <td colspan="2">
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="width:100px; height:40px;">用户名：</span>
+                                    <input type="text" name="UserName" class="form-control" placeholder="请输入账号" style="width:250px; height:40px;">
+                                </div>
+                                <br>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="width:100px;height:40px">密&nbsp;&nbsp;码：</span>
+                                    <input type="password" name="PassWord" class="form-control" placeholder="请输入密码" style="width:250px; height:40px;">
+                                </div>
+                            </td>
+                        </tr>
+                  
+                        <tr>
+                            <td align="center" colspan="3">
+                                  <button type="submit" class="btn btn-success" style="width:80px;">提交</button>
+                              </td>
+                        </tr>
+                    </table>
+                </form>
+            
+    </table>*@
+</body>
+</html>
