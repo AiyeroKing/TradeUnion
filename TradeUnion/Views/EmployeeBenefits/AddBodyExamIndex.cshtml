@@ -4,5 +4,69 @@
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
 
-<h2>AddBodyExamIndex</h2>
+<div class="col-md-9 well admin-content">
+
+    <form action="/EmployeeBenefits/AddEyeBeft" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend class="text-center">添加体检信息</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">编号</label>
+                <div class="col-md-4">
+                    <input name="BianHao" type="text" placeholder="输入教职工编号" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">姓名</label>
+                <div class="col-md-4">
+                    <input name="XingMing" type="text" placeholder="输入教职工姓名" class="form-control input-md">
+                    <span class="help-block">自动选择</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">时间</label>
+                <div class="col-md-4">
+                    <input name="ShiJian" type="text" placeholder="填写体检时间" class="form-control input-md" required>
+                    <span class="help-block">格式:YYYY-MM-DD</span>
+                </div>
+            </div>  
+
+            <!-- Drop Down -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">医院</label>
+                <select class="form-control" name="YiYuan">
+                    <option value="友爱医院">友爱医院</option>
+                    <option value="同仁医院">同仁医院</option>
+                    <option value="蓝天医院">蓝天医院</option>
+                </select>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">体检结果</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" name="JieGuo"></textarea>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">选择</label>
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-info">确定</button>
+                    <button type="reset" class="btn btn-warning">重置</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
 

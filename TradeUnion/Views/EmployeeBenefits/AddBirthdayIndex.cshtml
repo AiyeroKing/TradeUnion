@@ -4,5 +4,50 @@
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
 
-<h2>AddBirthdayIndex</h2>
+<div class="col-md-9 well admin-content" >
+   
 
+    <form action="/EmployeeBenefits/AddBriDay" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend class="text-center">添加教职工生日信息</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">编号</label>
+                <div class="col-md-4">
+                    <input name="BianHao" type="text" placeholder="输入教职工编号" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">姓名</label>
+                <div class="col-md-4">
+                    <input name="XingMing" type="text" placeholder="输入教职工姓名" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >生日</label>
+                <div class="col-md-4">
+                    <input name="ShengRi" type="text" placeholder="填写教职工生日" class="form-control input-md" required>
+                    <span class="help-block">格式为:YYYY-MM-DD</span>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">选择</label>
+                <div class="col-md-8">
+                    <button  type="submit" class="btn btn-info">确定</button>
+                    <button type="reset" class="btn btn-warning">重填</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>

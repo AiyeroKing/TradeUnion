@@ -3,6 +3,101 @@
     ViewBag.Title = "AddUnionMembersIndex";
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
+<div class="col-md-9 well admin-content">
+    <form action="/UnionMembers/AddMbs" method="post">
+        <fieldset>
 
-<h2>AddUnionMembersIndex</h2>
+            <!-- Form Name -->
+            <legend class="text-center">新增工会成员</legend>
+
+            <!-- Prepended text-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">编号</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Num</span>
+                        <input name="BianHao" class="form-control" placeholder="填写编号" type="text" required>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">密码</label>
+                <div class="col-md-4">
+                    <input name="PassWord" type="password" placeholder="输入您的密码" class="form-control input-md" required>
+                    <span class="help-block">输入密码时请注意防止他人偷窥</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">姓名</label>
+                <div class="col-md-4">
+                    <input name="XingMing" type="text" placeholder="在此输入您的姓名" class="form-control input-md" required>
+                    <span class="help-block">必填选项</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">身份证</label>
+                <div class="col-md-4">
+                    <input name="IDCard" type="text" placeholder="输入18位身份证号" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">生日</label>
+                <div class="col-md-4">
+                    <input name="ShengRi" type="text" placeholder="填写生日信息" class="form-control input-md" required>
+                    <span class="help-block">格式:YYYY-MM-DD</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">家庭住址</label>
+                <div class="col-md-4">
+                    <input name="Address" type="text" placeholder="详细填写您的家庭住址" class="form-control input-md" required>
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >联系方式</label>
+                <div class="col-md-4">
+                    <input name="LianXIFangShi" type="text" placeholder="固定电话或者手机号" class="form-control input-md" required>
+                    <span class="help-block">如实填写您的联系信息</span>
+                </div>
+            </div>
+
+            <!-- Drop Down -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">学历</label>
+                 <select class="form-control" name="LeiXing">
+                    <option value="小学">小学</option>
+                    <option value="初中">初中</option>
+                    <option value="高中">高中</option>
+                    <option value="大学">大学</option>
+                </select>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">选择</label>
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-info">确定</button>
+                    <button type="reset" class="btn btn-warning">重置</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
 

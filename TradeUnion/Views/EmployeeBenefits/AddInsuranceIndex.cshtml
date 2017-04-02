@@ -4,5 +4,73 @@
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
 
-<h2>AddInsuranceIndex</h2>
+<div class="col-md-9 well admin-content">
+    <form action="/EmployeeBenefits/AddEmpBenf" method="post">
+        <fieldset>
+            <!-- Form Name -->
+            <legend class="text-center">健康基金投险</legend>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">编号</label>
+                <div class="col-md-4">
+                    <input name="BianHao" type="text" placeholder="输入参险人编号" class="form-control input-md" required="">
+                    <span class="help-block">请如实填写</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >姓名</label>
+                <div class="col-md-4">
+                    <input  name="XingMing" type="text" placeholder="输入参险人姓名" class="form-control input-md" required="">
+                    <span class="help-block">请如实填写</span>
+                </div>
+            </div>
+
+            <!-- Appended Input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">保险期至</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input  name="YouXiaoQi" class="form-control" placeholder="保险年限" type="text" required="">
+                        <span class="input-group-addon">年</span>
+                    </div>
+                    <p class="help-block">截止年限格式:YYYY-MM-DD</p>
+                </div>
+            </div>
+            <!-- Appended Input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">保险类型</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input  name="BaoXian" class="form-control" placeholder="参加保险类型" type="text" required="">
+                        <span class="input-group-addon">险</span>
+                    </div>
+                    <p class="help-block">为教职工投险类型</p>
+                </div>
+            </div>
+            <!-- Appended Input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >参险份数</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input name="FenSHu" class="form-control" placeholder="投险份数" type="text" required="">
+                        <span class="input-group-addon">份</span>
+                    </div>
+                    <p class="help-block">此处为各位教职工投险份数</p>
+                </div>
+            </div>
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >选择</label>
+                <div class="col-md-8">
+                    <button type="submit"  class="btn btn-info">确定</button>
+                    <button type="reset"  class="btn btn-warning">重选</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
 

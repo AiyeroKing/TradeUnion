@@ -4,5 +4,94 @@
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
 
-<h2>AddChildIndex</h2>
+<div class="col-md-9 well admin-content" >
 
+
+    <form action="/EmployeeFamily/AddCil" method="post">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend class="text-center">添加子女信息</legend>
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="TextBox1">编号</label>
+                <div class="col-md-4">
+                    <input name="BianHao" type="text" placeholder="填写编号" class="form-control input-md" required="">
+                    <span class="help-block">请如实填写您的编号</span>
+                </div>
+            </div>
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >姓名</label>
+                <div class="col-md-4">
+                    <input  name="XingMing" type="text" placeholder="填写姓名" class="form-control input-md" required="">
+                    <span class="help-block">请如实填写您的姓名</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >关系</label>
+                <div class="col-md-4">
+                    <input  name="GuanXi" type="text" placeholder="输入子女与您的关系" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">子女姓名</label>
+                <div class="col-md-4">
+                    <input  name="XingMing2" type="text" placeholder="输入您子女的姓名" class="form-control input-md" required="">
+                    <span class="help-block">请如实填写您子女的姓名</span>
+                </div>
+            </div>
+
+            <!-- Appended Input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >年龄</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input  name="Age" class="form-control" placeholder="输入子女年龄" type="text" required="">
+                        <span class="input-group-addon">岁</span>
+                    </div>
+                    <p class="help-block">请填写阿拉伯数字</p>
+                </div>
+            </div>
+            <!-- Button Drop Down -->
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">学历</label>
+                <select class="form-control" name="XueLi">
+                    <option value="小学">小学</option>
+                    <option value="初中">初中</option>
+                    <option value="高中">高中</option>
+                </select>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">学校</label>
+                <div class="col-md-4">
+                    <input name="XueXiao" type="text" placeholder="填写就读学校" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" >选择</label>
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-info">确定</button>
+                    <button type="reset" class="btn btn-warning">重填</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>

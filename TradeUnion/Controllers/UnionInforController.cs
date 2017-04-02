@@ -97,6 +97,11 @@ namespace TradeUnion.Controllers
             sqlh.ExecData(AddJiaGousql, para);
             return RedirectToAction("ScanUnionArchiIndex", "UnionInfor");
         }
+        /// <summary>
+        /// 查找表中架构的数据并输出到页面
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
 
         #endregion
 

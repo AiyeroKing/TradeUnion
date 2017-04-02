@@ -154,10 +154,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Baoxian.cs" />
+    <Compile Include="Models\Shengri.cs" />
+    <Compile Include="Models\TBaoXian.cs" />
     <Compile Include="Models\FaGui.cs" />
+    <Compile Include="Models\FTeShu.cs" />
     <Compile Include="Models\GongGao.cs" />
+    <Compile Include="Models\GongHui.cs" />
     <Compile Include="Models\JiaGou.cs" />
+    <Compile Include="Models\KeHu.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Teshu.cs" />
+    <Compile Include="Models\TiJian.cs" />
+    <Compile Include="Models\ZiNV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

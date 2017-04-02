@@ -3,6 +3,50 @@
     ViewBag.Title = "AddChildStatusIndex";
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
+<div class="col-md-9 well admin-content">
+    <form action="/EmployeeFamily/AddZiNvStatus" method="post">
+        <fieldset>
 
-<h2>AddChildStatusIndex</h2>
+            <!-- Form Name -->
+            <legend class="text-center">添加特殊情况</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">编号</label>
+                <div class="col-md-4">
+                    <input name="BianHao" type="text" placeholder="输入教职工编号" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label">姓名</label>
+                <div class="col-md-4">
+                    <input name="XingMing" type="text" placeholder="输入教职工子女姓名" class="form-control input-md">
+                    <span class="help-block">自动选择</span>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">情况</label>
+                <div class="col-md-4">
+                    <input name="TeShu" type="text" placeholder="填写特殊情况原因" class="form-control input-md">
+                    <span class="help-block">请详细填写具体原因</span>
+                </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label">选择</label>
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-info">确定</button>
+                    <button type="reset" class="btn btn-warning">重填</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
 
