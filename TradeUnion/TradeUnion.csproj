@@ -154,6 +154,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FaGui.cs" />
+    <Compile Include="Models\GongGao.cs" />
     <Compile Include="Models\JiaGou.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

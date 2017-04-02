@@ -4,53 +4,49 @@
     Layout = "~/Views/Shared/_UnionLeft.cshtml";
 }
 
-<div class="col-md-9 well admin-content" id="FaGui" >
-    <form action="~/UnionInfor/" id="AddUnionPolicy" >
+<div class="col-md-9 well admin-content" >
+    <form action="/UnionInfor/AddFaGuiMSG"  method="post" >
         <fieldset>
-
             <!-- Form Name -->
             <legend class="text-center">发布政策法规</legend>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="PolicyTitle">政策法规标题</label>
+                <label class="col-md-4 control-label">政策法规标题</label>
                 <div class="col-md-6">
-                    <input id="TextBox1" name="PolicyTitle" type="text" placeholder="输入政策法规标题" class="form-control input-md" required="">
+                    <input name="MingCheng" type="text" placeholder="输入政策法规标题" class="form-control input-md" required>
                     <span class="help-block">此处应该填写政策法规标题</span>
                 </div>
             </div>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="Publisher">发布人</label>
+                <label class="col-md-4 control-label" >发布人</label>
                 <div class="col-md-4">
-                    <input id="Publisher" name="TextBox2" type="text" placeholder="填写发布人名字" class="form-control input-md" required="">
+                    <input  name="FabuRen" type="text" placeholder="填写发布人名字" class="form-control input-md" required>
                     <span class="help-block">此处应如实填写发布人名字</span>
                 </div>
             </div>
 
             <!-- Textarea -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="Policy">政策法规内容</label>
+                <label class="col-md-4 control-label" >政策法规内容</label>
                 <div class="col-md-4">
-                    <textarea class="form-control" id="TextBox3" name="TextBox3"></textarea>
+                    <textarea class="form-control"  name="JieShao" required></textarea>
                 </div>
             </div>
-
+            <input style="display:none" name="ShiJian" />
             <!-- Button (Double) -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="Button1">选择</label>
+                <label class="col-md-4 control-label" >选择</label>
                 <div class="col-md-8">
-                    <button id="Button1" name="Button1" class="btn btn-info">确定</button>
-                    <button id="Button2" name="Button2" class="btn btn-warning">重填</button>
+                    <button type="submit" class="btn btn-info">确定</button>
+                    <button type="reset" class="btn btn-warning">重填</button>
                 </div>
             </div>
 
         </fieldset>
     </form>
-
 </div>
-
-<h2>AddUnionPolicyIndex</h2>
 
 

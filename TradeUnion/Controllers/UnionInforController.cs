@@ -69,8 +69,7 @@ namespace TradeUnion.Controllers
             return View();
         }
         #endregion
-
-
+        
         #region ---工会架构信息的方法
         /// <summary>
         /// 添加工会架构信息的方法
@@ -99,8 +98,69 @@ namespace TradeUnion.Controllers
             return RedirectToAction("ScanUnionArchiIndex", "UnionInfor");
         }
 
+        #endregion
 
+        #region ---法规信息增加的方法
+        /// <summary>
+        /// 添加工会架构信息的方法
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public ActionResult AddFaGuiMSG(FaGui model)
+        {
+            SQLHelper sqlh = new SQLHelper();
+            model.ShiJian = DateTime.Now;
+            const string AddFaGuisql = @"INSERT INTO dbo.TB_FaGui
+                                       ( MingCheng, FabuRen,JieShao,ShiJian) 
+                                        VALUES  ( @MingCheng, 
+                                                  @FabuRen,
+			                                      @JieShao,
+			                                      @ShiJian
+            ) ";
+            SqlParameter[] para = new SqlParameter[]
+            {
+              new SqlParameter("MingCheng",model.MingCheng),
+              new SqlParameter("FabuRen", model.FabuRen),
+              new SqlParameter("JieShao", model.JieShao),
+              new SqlParameter("ShiJian", model.ShiJian)
+             };
+            sqlh.ExecData(AddFaGuisql, para);
+            return RedirectToAction("ScanUnionPolicyIndex", "UnionInfor");
+        }
 
         #endregion
+        
+        #region ---工会公告信息的方法
+        /// <summary>
+        /// 添加工会架构信息的方法
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public ActionResult AddGongGaoMSG(GongGao model)
+        {
+            SQLHelper sqlh = new SQLHelper();
+            model.ShiJian = DateTime.Now;
+            const string AddGongGaosql = @"INSERT INTO dbo.TB_GongGao
+                                       ( MingCheng, FabuRen,JieShao,ShiJian) 
+                                        VALUES  ( @MingCheng, 
+                                                  @FabuRen,
+			                                      @JieShao,
+			                                      @ShiJian
+            ) ";
+            SqlParameter[] para = new SqlParameter[]
+            {
+              new SqlParameter("MingCheng",model.MingCheng),
+              new SqlParameter("FabuRen", model.FabuRen),
+              new SqlParameter("JieShao", model.JieShao),
+              new SqlParameter("ShiJian", model.ShiJian)
+             };
+            sqlh.ExecData(AddGongGaosql, para);
+            return RedirectToAction("ScanUnionAnnounIndex", "UnionInfor");
+        }
+
+        #endregion
+        
+
+
     }
 }
