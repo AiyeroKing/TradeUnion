@@ -138,8 +138,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EmployeeBenefitsController.cs" />
+    <Compile Include="Controllers\EmployeeFamilyController.cs" />
+    <Compile Include="Controllers\IntroUnionController.cs" />
+    <Compile Include="Controllers\JoinUsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UnionFunctionController.cs" />
+    <Compile Include="Controllers\UnionInforController.cs" />
+    <Compile Include="Controllers\UnionMembersController.cs" />
     <Compile Include="DataBaseTool\SQLHelper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -388,6 +394,32 @@
     <Content Include="Views\Home\HomeIndex.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
     <Content Include="Views\UnionFunction\UnionFunctionIndex.cshtml" />
+    <Content Include="Views\IntroUnion\IntroUnionIndex.cshtml" />
+    <Content Include="Views\UnionInfor\UnionInforIndex.cshtml" />
+    <Content Include="Views\UnionInfor\AddUnionArchiIndex.cshtml" />
+    <Content Include="Views\UnionInfor\AddUnionPolicyIndex.cshtml" />
+    <Content Include="Views\UnionInfor\AddUnionAnnounIndex.cshtml" />
+    <Content Include="Views\UnionInfor\ScanUnionArchiIndex.cshtml" />
+    <Content Include="Views\UnionInfor\ScanUnionPolicyIndex.cshtml" />
+    <Content Include="Views\UnionInfor\ScanUnionAnnounIndex.cshtml" />
+    <Content Include="Views\UnionMembers\UnionMembersIndex.cshtml" />
+    <Content Include="Views\UnionMembers\AddUnionMembersIndex.cshtml" />
+    <Content Include="Views\UnionMembers\ScanUnionMembersIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\EmployeeBenefitsIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\AddBodyExamIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\AddBirthdayIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\AddInsuranceIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\AddSpecialIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\ScanBodyExamIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\ScanBirthdayIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\ScanInsuranceIndex.cshtml" />
+    <Content Include="Views\EmployeeBenefits\ScanSpecialIndex.cshtml" />
+    <Content Include="Views\JoinUs\JoinUsIndex.cshtml" />
+    <Content Include="Views\EmployeeFamily\EmployeeFamilyIndex.cshtml" />
+    <Content Include="Views\EmployeeFamily\AddChildIndex.cshtml" />
+    <Content Include="Views\EmployeeFamily\AddChildStatusIndex.cshtml" />
+    <Content Include="Views\EmployeeFamily\ScanChildIndex.cshtml" />
+    <Content Include="Views\EmployeeFamily\ScanChildStatusIndex.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

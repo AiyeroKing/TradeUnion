@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace TradeUnion.Controllers
 {
-    public class HomeController : Controller
+    public class IntroUnionController : Controller
     {
-        #region  ---返回视图
+        #region --返回视图
         /// <summary>
-        /// 
+        /// 工会职能
         /// </summary>
         /// <returns></returns>
-        public ActionResult HomeIndex()
+        // GET: IntroUnion
+        public ActionResult IntroUnionIndex()
         {
             return View();
         }

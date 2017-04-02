@@ -9,6 +9,10 @@ namespace TradeUnion.Controllers
     public class LoginController : Controller
     {
         #region  ---返回该控制器的视图
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         // GET: Login
         public ActionResult LoginIndex()
         {
@@ -17,6 +21,11 @@ namespace TradeUnion.Controllers
         #endregion
 
         #region  ---账号密码检查
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public ActionResult LoginAction(Login model)
         {
             string name = model.UserName;  //name 为 视图中获取的 输入框中  name为UserName 值

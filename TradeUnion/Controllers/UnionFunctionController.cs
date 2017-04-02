@@ -8,10 +8,16 @@ namespace TradeUnion.Controllers
 {
     public class UnionFunctionController : Controller
     {
+        #region  --返回视图
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         // GET: UnionFunction
         public ActionResult UnionFunctionIndex()
         {
             return View();
         }
+        #endregion
     }
 }
