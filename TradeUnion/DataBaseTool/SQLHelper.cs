@@ -31,7 +31,41 @@ public class SQLHelper
         return ConfigurationManager.AppSettings["connstr"];
     }
 
+    #region--连接SqlConnection,执行SQL 功能:增加、删除、更新--  
+    public void ExecData(string sqlstr, SqlParameter[] para)
+    {
+        SqlConnection sqlcon = new SqlConnection(GetConnStr());
+        sqlcon.Open();
+        SqlCommand sqlcom = new SqlCommand(sqlstr, sqlcon);
 
+        foreach (var item in para)
+        {
+            sqlcom.Parameters.Add(item);
+        }
+
+        sqlcom.ExecuteNonQuery();
+        sqlcom.Dispose();
+        sqlcon.Close();
+        sqlcon.Dispose();
+    }
+
+    #endregion
+
+    #region--创建SqlDataReader对象  功能:查询--  
+    public SqlDataReader ReadData(string sqlstr, SqlParameter[] para)
+    {
+        SqlConnection sqlcon = new SqlConnection(GetConnStr());
+        sqlcon.Open();
+        SqlCommand sqlcom = new SqlCommand(sqlstr, sqlcon);
+        foreach (var item in para)
+        {
+            sqlcom.Parameters.Add(item);
+        }
+        SqlDataReader sqlread = sqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+        return sqlread;
+    }
+
+    #endregion
 
     /// <summary>
     /// 由sql变量（select语句）得到DataSet类型查询记录集合

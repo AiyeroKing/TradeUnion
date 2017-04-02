@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TradeUnion.Models;
 
 namespace TradeUnion.Controllers
 {
@@ -66,6 +68,39 @@ namespace TradeUnion.Controllers
         {
             return View();
         }
+        #endregion
+
+
+        #region ---工会架构信息的方法
+        /// <summary>
+        /// 添加工会架构信息的方法
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public ActionResult AddJiaGouMSG(JiaGou model)
+        {
+            SQLHelper sqlh = new SQLHelper();
+            model.ShiJian = DateTime.Now;
+            const string AddJiaGousql = @"INSERT INTO dbo.TB_JiaGou
+                                       ( MingCheng, FabuRen,JieShao,ShiJian) 
+                                        VALUES  ( @MingCheng, 
+                                                  @FabuRen,
+			                                      @JieShao,
+			                                      @ShiJian
+            ) ";
+            SqlParameter[] para = new SqlParameter[]
+            {
+              new SqlParameter("MingCheng",model.MingCheng),
+              new SqlParameter("FabuRen", model.FabuRen),
+              new SqlParameter("JieShao", model.JieShao),
+              new SqlParameter("ShiJian", model.ShiJian)
+             };
+            sqlh.ExecData(AddJiaGousql, para);
+            return RedirectToAction("ScanUnionArchiIndex", "UnionInfor");
+        }
+
+
+
         #endregion
     }
 }
