@@ -139,7 +139,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="DataBaseTool\DBHelper.cs" />
+    <Compile Include="Controllers\UnionFunctionController.cs" />
+    <Compile Include="DataBaseTool\SQLHelper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -169,6 +170,7 @@
     <Content Include="Content\css\jquery-ui.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\Nav_left.css" />
+    <Content Include="Content\css\RenderBody.css" />
     <Content Include="Content\css\Striped table.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\style_left.css" />
@@ -370,6 +372,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tab carousel.js" />
     <Content Include="Scripts\vertical menu.js" />
+    <Content Include="Views\Shared\_UnionLeft.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -384,6 +387,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\HomeIndex.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
+    <Content Include="Views\UnionFunction\UnionFunctionIndex.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

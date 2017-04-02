@@ -13,14 +13,14 @@ using System.Data.SqlClient;//引入命名空间
 /// <summary>
 /// DBHelper 的摘要说明：公共类用来操作数据库，静态类通过类名直接调用其中的方法
 /// </summary>
-public class DBHelper
+public class SQLHelper
 {
-    public DBHelper()
+    public SQLHelper()
     {
         //
         // TODO: 在此处添加构造函数逻辑
         //
-   }
+    }
 
     /// <summary>
     /// 获得数据库连接字符串
@@ -29,7 +29,7 @@ public class DBHelper
     public static string GetConnStr()
     {
         return ConfigurationManager.AppSettings["connstr"];
-   }
+    }
 
 
 
@@ -38,7 +38,7 @@ public class DBHelper
     /// </summary>
     /// <param name="sql">select语句，字符串类型</param>
     /// <returns></returns>
-    public static DataSet GetReader(string sql)
+    public static DataSet GetDataSet(string sql)
     {
         SqlConnection conn = new SqlConnection(GetConnStr());
         conn.Open();
@@ -47,47 +47,9 @@ public class DBHelper
         sda.Fill(ds);
         conn.Close();
         return ds;
-   }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="sqlstr"></param>
-    /// <param name="para"></param>
-    public void ExecData(string sqlstr, SqlParameter[] para)
-    {
-        SqlConnection sqlcon = new SqlConnection(GetConnStr());
-        sqlcon.Open();
-        SqlCommand sqlcom = new SqlCommand(sqlstr, sqlcon);
-        foreach (var item in para)
-        {
-            sqlcom.Parameters.Add(item);
-        }
-        sqlcom.ExecuteNonQuery();
-        sqlcom.Dispose();
-        sqlcon.Close();
-        sqlcon.Dispose();
-    }
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="sqlstr"></param>
-    /// <param name="para"></param>
-    /// <returns></returns>
-    #region--创建SqlDataReader对象  功能:查询--  
-    public SqlDataReader ReadData(string sqlstr, SqlParameter[] para)
-    {
-        SqlConnection sqlcon = new SqlConnection(GetConnStr());
-        sqlcon.Open();
-        SqlCommand sqlcom = new SqlCommand(sqlstr, sqlcon);
-        foreach (var item in para)
-        {
-            sqlcom.Parameters.Add(item);
-        }
-        SqlDataReader sqlread = sqlcom.ExecuteReader(CommandBehavior.CloseConnection);
-        return sqlread;
     }
 
-    #endregion
+
 
 
     /// <summary>
@@ -104,14 +66,14 @@ public class DBHelper
         {
             cmd.ExecuteNonQuery();
             conn.Close();
-       }
+        }
         catch (Exception ex)
         {
             conn.Close();
             return false;
-       }
+        }
         return true;
-   }
+    }
 
 
 
@@ -120,7 +82,7 @@ public class DBHelper
     /// </summary>
     /// <param name="sql">select语句</param>
     /// <returns>SQLDataReader类型记录集</returns>
-    public static SqlDataReader GetReaders(string sql)
+    public static SqlDataReader GetReader(string sql)
     {
         SqlConnection conn = new SqlConnection(GetConnStr());
         conn.Open();
@@ -139,7 +101,7 @@ public class DBHelper
 
         //}
         return dr;
-   }
+    }
 
 
 
@@ -159,7 +121,7 @@ public class DBHelper
         dbAdapter.Fill(dataset, TableName);
         con.Close();
         return dataset;
-   }
+    }
 
 
 
@@ -172,7 +134,7 @@ public class DBHelper
     public static void BindDDL(DropDownList ddlName, string sql)
     {
         ddlName.Items.Clear();
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
 
         ListItem li = new ListItem("", "");
         ddlName.Items.Add(li);
@@ -182,8 +144,8 @@ public class DBHelper
             {
                 li = new ListItem(ds.Tables[0].Rows[i][1].ToString(), ds.Tables[0].Rows[i][0].ToString());//text,value
                 ddlName.Items.Add(li);
-           }
-       }
+            }
+        }
 
         /*
         //如下的代码也可以；确点无法添加空项目
@@ -198,7 +160,7 @@ public class DBHelper
             ddlName.DataBind();
        }
         */
-   }
+    }
 
 
     #region 查找某值在某表中某字段中是否出现过--重载
@@ -213,11 +175,11 @@ public class DBHelper
     {
         string sql = "";
         sql = "select * from " + TabName + " where " + FieldName + "='" + strVal + "'";
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
         if (ds.Tables[0].Rows.Count > 0)
             return true;
         return false;
-   }
+    }
 
     /// <summary>
     /// 
@@ -230,11 +192,11 @@ public class DBHelper
     {
         string sql;
         sql = "select * from " + TabName + " where " + FieldName + "=" + iVal;
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
         if (ds.Tables[0].Rows.Count > 0)
             return true;
         return false;
-   }
+    }
 
     /// <summary>
     /// 
@@ -247,11 +209,11 @@ public class DBHelper
     {
         string sql;
         sql = "select * from " + TabName + " where " + FieldName + "='" + dVal + "'";
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
         if (ds.Tables[0].Rows.Count > 0)
             return true;
         return false;
-   }
+    }
     #endregion
 
 
@@ -267,12 +229,12 @@ public class DBHelper
     public static string GetNameById(string TabName, string No, string FieldNameofName, string FieldNameofNo)
     {
         string sql = "select " + FieldNameofName + " from " + TabName + " where " + FieldNameofNo + " = '" + No + "'";
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
         if (ds != null)
             return (ds.Tables[0].Rows[0][0].ToString());
         else
             return string.Empty;
-   }
+    }
 
     /// <summary>
     /// 
@@ -285,12 +247,12 @@ public class DBHelper
     public static string GetNameById(string TabName, int No, string FieldNameofName, string FieldNameofNo)
     {
         string sql = "select " + FieldNameofName + " from " + TabName + " where " + FieldNameofNo + " = " + No;
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
         if (ds != null)
             return (ds.Tables[0].Rows[0][0].ToString());
         else
             return string.Empty;
-   }
+    }
     #endregion
 
 
@@ -308,10 +270,10 @@ public class DBHelper
         string sql, no;
         sql = "select " + FieldNameofNo + " from " + Table + " where " + FieldNameofName + "='" + Name + "'";
 
-        DataSet ds = GetReader(sql);
+        DataSet ds = GetDataSet(sql);
         no = ds.Tables[0].Rows[0][0].ToString();
         return no;
-   }
+    }
 
     //public static int GetNo(string Name, string Table, string FieldNameofNo, string FieldNameofName)
     //{
@@ -347,9 +309,9 @@ public class DBHelper
         {
             foreach (SqlParameter Parameter in Prams)
                 Cmd.Parameters.Add(Parameter);
-       }
+        }
         return Cmd;
-   }
+    }
 
     //公有方法，调用存储过程(带参数)
     //输入：
@@ -364,7 +326,7 @@ public class DBHelper
         Cmd.ExecuteNonQuery();
         Cmd.Dispose();
         //return Count;
-   }
+    }
 
     //公有方法，调用存储过程(不带参数)
     //输入：
@@ -380,7 +342,7 @@ public class DBHelper
         da.Fill(ds);
         conn.Close();
         return ds;
-   }
+    }
 
     //公有方法，调用存储过程(带参数)
     //输入：
@@ -393,7 +355,7 @@ public class DBHelper
     {
         SqlCommand Cmd = CreatCommand(ProcName, Params);
         return Cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-   }
+    }
 
     /// <summary>
     /// 初始化参数值
@@ -415,7 +377,7 @@ public class DBHelper
         if (!(Direction == ParameterDirection.Output && Value == null))
             Param.Value = Value;
         return Param;
-   }
+    }
     //公有方法，实例化一个用于调用存储过程的输入参数
     //输入：
     //     ParamName - 数据库存储过程的参数名称
@@ -425,7 +387,7 @@ public class DBHelper
     public static SqlParameter MakeInParam(string ParamName, SqlDbType DbTpye, int Size, object Value)
     {
         return MakeParam(ParamName, DbTpye, Size, ParameterDirection.Input, Value);
-   }
+    }
     #endregion
 
 

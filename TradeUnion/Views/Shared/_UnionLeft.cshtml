@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/Content/css/accordion menu.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="Stylesheet" />
+    <link href="~/Content/css/jquery-ui.css" rel="Stylesheet" />
+    <link href="~/Content/css/vertical menu.css" rel="Stylesheet" />
+    <link href="~/Content/css/footer.css" rel="Stylesheet" />    
+    <link href="~/Content/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/css/RenderBody.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery.js" language="javascript" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-ui.js" language="javascript" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+    <script src="~/Scripts/vertical menu.js" language="javascript" type="text/javascript"></script>
+</head>
+
+
+
+
+<div class="container ">
+<div class="row ">
+<div class="col-md-3" style="height:500px;width:265px;">
+<ul class="nav nav-pills nav-stacked admin-menu ">
+    
+
+<li><nobr><a><i class="fa fa-home fa-2x fa-fw"></i>@Html.ActionLink("工会简介", "HomeIndex", "Home")</a></nobr></li>
+
+<li><nobr><a><i class="fa fa-tasks fa-2x fa-fw"></i>@Html.ActionLink("工会信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-institution fa-fw"></i>@Html.ActionLink("添加工会架构信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-balance-scale fa-fw"></i>@Html.ActionLink("发布工会政策法规", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-info fa-fw"></i>@Html.ActionLink("发布最新公告", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-eye fa-fw"></i>@Html.ActionLink("查看架构信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-eye fa-fw"></i>@Html.ActionLink("浏览工会政策法规", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-eye fa-fw"></i>@Html.ActionLink("查看最新公告", "HomeIndex", "Home")</a></nobr></li>
+
+<li><nobr><a><i class="fa fa-id-card fa-2x fa-fw"></i>@Html.ActionLink("工会成员管理", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-address-card fa-fw"></i>@Html.ActionLink("新增工会成员", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-cog fa-spin"></i>@Html.ActionLink("成员管理", "HomeIndex", "Home")</a></nobr></li>
+
+<li><nobr><a><i class="fa fa-heart fa-2x fa-fw"></i>@Html.ActionLink("教职工福利", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-heartbeat fa-fw"></i>@Html.ActionLink("新增体检信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-birthday-cake fa-fw"></i>@Html.ActionLink("添加教职工生日信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-area-chart fa-fw"></i>@Html.ActionLink("新增健康基金保险", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-user-o fa-fw"></i>@Html.ActionLink("添加特殊情况", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-medkit fa-fw"></i>@Html.ActionLink("查看体检信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-eye fa-fw"></i>@Html.ActionLink("校对教职工生日信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-pie-chart fa-fw"></i>@Html.ActionLink("浏览健康基金保险情况", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-user-o fa-fw"></i>@Html.ActionLink("管理特殊情况", "HomeIndex", "Home")</a></nobr></li>
+
+<li><nobr><a><i class="fa fa-user fa-2x fa-fw"></i>@Html.ActionLink("教职工家属", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-user-plus fa-fw"></i>@Html.ActionLink("新增子女信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-user-o fa-fw"></i>@Html.ActionLink("增加特殊情况", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-eye fa-fw"></i>@Html.ActionLink("查看子女信息", "HomeIndex", "Home")</a></nobr></li>
+<li style="padding-left:35px;"><nobr><a><i class="fa fa-user-o fa-fw"></i>@Html.ActionLink("管理特殊情况", "HomeIndex", "Home")</a></nobr></li>
+
+<li><nobr><a><i class="fa fa-paperclip fa-2x fa-fw"></i>@Html.ActionLink("加入我们", "HomeIndex", "Home")</a></nobr></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+
+
+
+<div class="RemderBody">
+ @RenderBody()
+</div>
+
+
+
