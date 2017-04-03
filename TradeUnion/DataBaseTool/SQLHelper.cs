@@ -66,6 +66,7 @@ public class SQLHelper
     }
 
     #endregion
+    
 
     /// <summary>
     /// 由sql变量（select语句）得到DataSet类型查询记录集合

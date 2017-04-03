@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -50,6 +52,7 @@ namespace TradeUnion.Controllers
         /// <returns></returns>
         public ActionResult ScanUnionArchiIndex()
         {
+           // ScanJiaGouMSG();
             return View();
         }
         /// <summary>
@@ -102,7 +105,34 @@ namespace TradeUnion.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        //public IEnumerable<JiaGou> ScanJiaGouMSG()
+        //{
 
+           
+
+
+        //    //return base.Query<JiaGou>(sqlh, dp).SingleOrDefault();
+
+
+        //    //SQLHelper sqlh = new SQLHelper();
+        //    //model.ShiJian = DateTime.Now;
+        //    //const string AddJiaGousql = @"INSERT INTO dbo.TB_JiaGou
+        //    //                           ( MingCheng, FabuRen,JieShao,ShiJian) 
+        //    //                            VALUES  ( @MingCheng, 
+        //    //                                      @FabuRen,
+        //    //                             @JieShao,
+        //    //                             @ShiJian
+        //    //) ";
+        //    //SqlParameter[] para = new SqlParameter[]
+        //    //{
+        //    //  new SqlParameter("MingCheng",model.MingCheng),
+        //    //  new SqlParameter("FabuRen", model.FabuRen),
+        //    //  new SqlParameter("JieShao", model.JieShao),
+        //    //  new SqlParameter("ShiJian", model.ShiJian)
+        //    // };
+        //    //sqlh.ExecData(AddJiaGousql, para);
+        //    //return RedirectToAction("ScanUnionArchiIndex", "UnionInfor");
+        //}
         #endregion
 
         #region ---法规信息增加的方法
